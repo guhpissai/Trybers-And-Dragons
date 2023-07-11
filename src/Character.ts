@@ -61,7 +61,10 @@ class Character implements Fighter {
   }
 
   public get energy() : Energy {
-    return this._energy;
+    return {
+      type_: this._energy.type_,
+      amount: this._energy.amount,
+    };
   }
 
   receiveDamage(attackPoints: number): number {
