@@ -21,6 +21,9 @@ class Monster implements SimpleFighter {
     if (this._lifePoints > attackPoints) {
       this._lifePoints -= attackPoints;
     }
+    if (attackPoints > this.lifePoints) {
+      this._lifePoints = -1;
+    }
     return this._lifePoints;
   }
 
