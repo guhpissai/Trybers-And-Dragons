@@ -1,7 +1,8 @@
-import Archetype from './Archetypes';
+import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
 import Fighter from './Fighter';
 import Race, { Elf } from './Races';
+import getRandomInt from './utils';
 
 class Character implements Fighter {
   private _race: Race;
@@ -13,17 +14,21 @@ class Character implements Fighter {
   private _dexterity: number;
   private _energy: Energy;
 
-  constructor(race: Race, archetype: Archetype) {
-    this._dexterity = Math.floor(Math.random() * 10) + 1;
+  constructor(
+    name: string, 
+    race = new Elf(name, 20), 
+    archetype = new Mage(name),
+  ) {
+    this._dexterity = getRandomInt(1, 10);
     this._race = race;
     this._archetype = archetype;
     this._maxLifePoints = race.maxLifePoints / 2;
     this._lifePoints = race.maxLifePoints;
-    this._strength = Math.floor(Math.random() * 10) + 1;
-    this._defense = Math.floor(Math.random() * 10) + 1;
+    this._strength = getRandomInt(1, 10);
+    this._defense = getRandomInt(1, 10);
     this._energy = { 
       type_: archetype.energyType, 
-      amount: Math.floor(Math.random() * 10) + 1, 
+      amount: getRandomInt(1, 10), 
     };
   }
   
@@ -57,6 +62,44 @@ class Character implements Fighter {
 
   public get energy() : Energy {
     return this._energy;
+  }
+
+  receiveDamage(attackPoints: number): number {
+    const damage = attackPoints - this.defense;
+    if (damage > 0) {
+      this._lifePoints -= damage;
+    }
+    if (damage <= 0) {
+      this._lifePoints -= 1;
+    }
+    if (damage > this._lifePoints) {
+      this._lifePoints = -1;
+    }
+    return this._lifePoints;
+  }
+
+  attack(enemy: Fighter): void {
+    enemy.receiveDamage(this.strength);
+  }
+
+  levelUp(): void {
+    this._maxLifePoints += getRandomInt(1, 10);
+    this._strength += getRandomInt(1, 10);
+    this._dexterity += getRandomInt(1, 10);
+    this._defense += getRandomInt(1, 10);
+    this._energy.amount = 10;
+    if (this._maxLifePoints > this._race.maxLifePoints) {
+      this._maxLifePoints = this._race.maxLifePoints;
+    }
+    if (this._lifePoints < this._maxLifePoints) {
+      this._lifePoints += getRandomInt(1, 10);
+    }
+  }
+
+  special(enemy: Fighter): void {
+    this._defense += 10;
+    this._lifePoints += 10;
+    enemy.receiveDamage(10);
   }
 }
 
