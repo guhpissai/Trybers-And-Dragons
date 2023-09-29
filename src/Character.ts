@@ -14,53 +14,49 @@ class Character implements Fighter {
   private _dexterity: number;
   private _energy: Energy;
 
-  constructor(
-    name: string, 
-    race = new Elf(name, 20), 
-    archetype = new Mage(name),
-  ) {
+  constructor(name: string) {
     this._dexterity = getRandomInt(1, 10);
-    this._race = race;
-    this._archetype = archetype;
-    this._maxLifePoints = race.maxLifePoints / 2;
-    this._lifePoints = race.maxLifePoints;
+    this._race = new Elf(name, 20);
+    this._archetype = new Mage(name);
+    this._maxLifePoints = this._race.maxLifePoints / 2;
+    this._lifePoints = this._race.maxLifePoints;
     this._strength = getRandomInt(1, 10);
     this._defense = getRandomInt(1, 10);
-    this._energy = { 
-      type_: archetype.energyType, 
-      amount: getRandomInt(1, 10), 
+    this._energy = {
+      type_: this._archetype.energyType,
+      amount: getRandomInt(1, 10),
     };
   }
-  
-  public get dexterity() : number {
+
+  public get dexterity(): number {
     return this._dexterity;
   }
 
-  public get race() : Race {
+  public get race(): Race {
     return this._race;
   }
 
-  public get archetype() : Archetype {
+  public get archetype(): Archetype {
     return this._archetype;
   }
 
-  public get maxLifePoints() : number {
+  public get maxLifePoints(): number {
     return this._maxLifePoints;
   }
 
-  public get lifePoints() : number {
+  public get lifePoints(): number {
     return this._lifePoints;
   }
 
-  public get strength() : number {
+  public get strength(): number {
     return this._strength;
   }
 
-  public get defense() : number {
+  public get defense(): number {
     return this._defense;
   }
 
-  public get energy() : Energy {
+  public get energy(): Energy {
     return {
       type_: this._energy.type_,
       amount: this._energy.amount,
