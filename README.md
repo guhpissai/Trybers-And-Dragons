@@ -1,13 +1,42 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybers And Dragons
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Trybers And Dragons é um jogo de RPG (Role-Playing Game) desenvolvido utilizando TypeScript e seguindo os princípios SOLID e conceitos de Programação Orientada a Objetos (POO). Neste jogo, existem classes para Personagens (Characters), Raças (Races), Monstros (Monsters), Dragões (Dragons), Energia (Energy) e Batalha (Battle). Os jogadores podem participar de batalhas PvP (Jogador contra Jogador) e PvE (Jogador contra Ambiente).
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Como Jogar
+
+1. Clone o repositório para o seu computador local.
+2. Abra o arquivo `index.js` para explorar os cenários de jogo e instâncias implementadas.
+
+## Tecnologias Utilizadas
+
+- TypeScript
+- Princípios SOLID
+- Programação Orientada a Objetos (POO)
+
+## Classes
+
+- `Character`: Representa os personagens dos jogadores no jogo.
+- `Race`: Define diferentes raças para os personagens.
+- `Monster`: Representa monstros que os jogadores podem enfrentar.
+- `Dragon`: Representa dragões poderosos no jogo.
+- `Energy`: Gerencia os níveis de energia dos personagens durante as batalhas.
+- `Battle`: Lida com a lógica de batalha entre personagens, monstros e dragões.
+
+## Recursos do Jogo
+
+- **Batalhas PvP**: Desafie outros jogadores em emocionantes batalhas jogador contra jogador.
+- **Batalhas PvE**: Enfrente monstros e dragões em encontros envolventes jogador contra ambiente.
+- **Customização de Personagens**: Escolha entre várias raças e classes para o seu personagem.
+- **Gestão de Energia**: Gerencie estrategicamente os níveis de energia do seu personagem durante as batalhas.
+
+## Como Começar
+
+Para começar a jogar, explore o arquivo `index.js` onde estão implementadas instâncias de exemplo e cenários de jogo.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e solicitações de pull (pull requests) para contribuir para o desenvolvimento do Trybers And Dragons.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
