@@ -33,10 +33,6 @@ Trybers And Dragons é um jogo de RPG (Role-Playing Game) desenvolvido utilizand
 
 Para começar a jogar, explore o arquivo `index.js` onde estão implementadas instâncias de exemplo e cenários de jogo.
 
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e solicitações de pull (pull requests) para contribuir para o desenvolvimento do Trybers And Dragons.
-
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
